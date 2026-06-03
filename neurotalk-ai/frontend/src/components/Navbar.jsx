@@ -27,6 +27,7 @@ const Navbar = () => {
             {user.role !== 'admin' ? (
               <>
                 <Link to="/dashboard" className="nav-link">Dashboard</Link>
+                <Link to="/chat" className="nav-link">Chat</Link>
                 <Link to="/history" className="nav-link">History</Link>
                 <Link to="/profile" className="nav-link">Profile</Link>
               </>

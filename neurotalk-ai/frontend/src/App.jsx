@@ -5,8 +5,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
 
-// Import pages
-import { Landing, Login, Signup, Dashboard, History, Profile, Admin } from './pages';
+import { Landing, Login, Signup, Dashboard, History, Profile, Admin, Chat } from './pages';
 import './App.css'; 
 
 const AnimatedRoutes = () => {
@@ -22,6 +21,7 @@ const AnimatedRoutes = () => {
 
         {/* Protected User Routes */}
         <Route path="/dashboard" element={<ProtectedRoute><PageWrapper><Dashboard /></PageWrapper></ProtectedRoute>} />
+        <Route path="/chat" element={<ProtectedRoute><PageWrapper><Chat /></PageWrapper></ProtectedRoute>} />
         <Route path="/history" element={<ProtectedRoute><PageWrapper><History /></PageWrapper></ProtectedRoute>} />
         <Route path="/profile" element={<ProtectedRoute><PageWrapper><Profile /></PageWrapper></ProtectedRoute>} />
 

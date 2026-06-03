@@ -17,11 +17,15 @@ services:
       - mongo
     environment:
       - MONGO_URI=mongodb://mongo:27017/neurotalk_ai
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
     container_name: neurotalk-frontend
     ports:
       - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:5001
     depends_on:
       - backend

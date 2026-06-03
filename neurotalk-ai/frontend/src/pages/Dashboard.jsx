@@ -280,7 +280,7 @@ const Dashboard = () => {
                           <div key={idx} className="sub-emotion-item">
                             <div className="sub-emotion-header">
                               <span>
-                                {emotionEmojis[emo.emotion]} {emo.emotion}
+                                {emotionEmojis[emo.label]} {emo.label}
                               </span>
                               <span>{(emo.score * 100).toFixed(1)}%</span>
                             </div>
@@ -291,7 +291,7 @@ const Dashboard = () => {
                                 animate={{ width: `${emo.score * 100}%` }}
                                 transition={{ duration: 0.8, delay: 0.2 + (idx * 0.1) }}
                                 style={{ 
-                                  backgroundColor: emotionColors[emo.emotion] || emotionColors.neutral 
+                                  backgroundColor: emotionColors[emo.label] || emotionColors.neutral 
                                 }}
                               />
                             </div>

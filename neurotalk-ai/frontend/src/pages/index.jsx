@@ -7,5 +7,6 @@ import Dashboard from './Dashboard';
 import History from './History';
 import Profile from './Profile';
 import Admin from './Admin';
+import Chat from './Chat';
 
-export { Landing, Login, Signup, Dashboard, History, Profile, Admin };
+export { Landing, Login, Signup, Dashboard, History, Profile, Admin, Chat };
