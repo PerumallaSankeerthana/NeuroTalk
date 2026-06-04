@@ -3,9 +3,14 @@ import os
 from transformers import DistilBertForSequenceClassification, DistilBertTokenizerFast
 
 # Load the model and tokenizer from saved_model
-model_dir = os.path.join(os.path.dirname(__file__), "saved_model")
-tokenizer = DistilBertTokenizerFast.from_pretrained(model_dir)
-model = DistilBertForSequenceClassification.from_pretrained(model_dir,attn_implementation="eager")
+MODEL_REPO = "sankeerthanareddy/neurotalk-emotion-model"
+
+tokenizer = DistilBertTokenizerFast.from_pretrained(MODEL_REPO)
+
+model = DistilBertForSequenceClassification.from_pretrained(
+    MODEL_REPO,
+    attn_implementation="eager"
+)
 model.eval()
 
 def explain_prediction(text):
