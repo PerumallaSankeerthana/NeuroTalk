@@ -2,14 +2,13 @@ FROM python:3.11
 
 WORKDIR /app
 
-COPY backend/requirements.txt .
-
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY backend/ ./backend
 COPY ml/ ./ml
 
-EXPOSE 5001
+EXPOSE 7860
 
 WORKDIR /app/backend
 
