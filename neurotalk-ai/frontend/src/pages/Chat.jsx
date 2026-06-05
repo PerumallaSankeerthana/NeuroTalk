@@ -62,7 +62,7 @@ const Chat = () => {
         conversation_history: history.map(h => ({ role: h.role, content: h.content }))
       };
 
-      const res = await axios.post('http://localhost:5001/api/chat', payload, config);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/chat`, payload, config);
       const data = res.data;
 
       // Update the temporary user message with the newly detected emotion data
