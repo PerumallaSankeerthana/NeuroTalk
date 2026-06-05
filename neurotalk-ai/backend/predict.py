@@ -14,7 +14,7 @@ if ml_dir not in sys.path:
 
 from model import predict_emotion
 from db import db
-from cognitive import detect_cognitive_distortions
+#from cognitive import detect_cognitive_distortions
 
 predict_bp = Blueprint('predict', __name__)
 
@@ -30,7 +30,7 @@ def predict():
 
     try:
         top_label, confidence, top_3, highlight_words = predict_emotion(text)
-        distortions = detect_cognitive_distortions(text)
+        distortions = []
     except Exception as e:
         return jsonify({'error': f'Model prediction failed: {str(e)}'}), 500
 

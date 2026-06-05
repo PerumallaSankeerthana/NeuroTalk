@@ -11,7 +11,7 @@ if ml_dir not in sys.path:
     sys.path.append(ml_dir)
 
 from model import predict_emotion
-from cognitive import detect_cognitive_distortions
+#from cognitive import detect_cognitive_distortions
 
 chat_bp = Blueprint('chat', __name__)
 
@@ -189,7 +189,7 @@ def chat():
 
     # Always re-run on every message
     top_label, confidence, top_3,_ = predict_emotion(message)
-    distortions = detect_cognitive_distortions(message)
+    distortions = []
 
     distortion_names = [d.get('distortion', '') for d in distortions] if distortions else []
     distortion_str = ', '.join(distortion_names) if distortion_names else 'none'
